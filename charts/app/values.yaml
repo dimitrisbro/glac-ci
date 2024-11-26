@@ -1,38 +1,10 @@
-replicaCount: 1
-
 image:
-  repository: ""
-  tag: ""
+  repository:  ghcr.io/dimitrisbro/valimage
   pullPolicy: IfNotPresent
+  tag: "latest"
 
-imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
+schedule: "* */2 * * *"
 
-serviceAccount:
-  create: true
-  automount: true
-  annotations: {}
-  name: ""
 
-podAnnotations: {}
-podLabels: {}
 
-podSecurityContext: {}
 
-securityContext: {}
-
-service:
-  type: ClusterIP
-  port: 80
-
-resources: {}
-
-livenessProbe:
-  httpGet:
-    path: /
-    port: http
-readinessProbe:
-  httpGet:
-    path: /
-    port: http

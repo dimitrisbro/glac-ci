@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: ipto-job
+  namespace: ipto-uc4
+spec:
+  schedule: {{.Values.schedule | quote}}
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: ipto-job-container
+            image: {{ .Values.image.repository }}
+            imagePullPolicy: IfNotPresent
+          restartPolicy: OnFailure

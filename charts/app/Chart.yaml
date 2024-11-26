@@ -1,6 +1,6 @@
 apiVersion: v2
-name: app
-description: Web service template in Python for reuse.
+name: ipto-cron-helm
+description: A Helm chart for Kubernetes
 type: application
-version: ""
-appVersion: ""
+version: 0.1.0
+appVersion: "0.1.0"
