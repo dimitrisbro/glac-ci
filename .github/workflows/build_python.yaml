@@ -67,7 +67,7 @@ jobs:
       - name: Install dependencies
         run: |
           poetry config virtualenvs.in-project true
-          poetry install --no-root --with dev
+          poetry install --no-root
 
 #      - name: Generate openapi.yaml
 #        run: poetry run python ./tools/extract_openapi.py app.main:app --app-dir . --out ./openapi.yaml --app_version "${{ env.APP_VERSION }}"
