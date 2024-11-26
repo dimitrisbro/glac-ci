@@ -1,4 +1,4 @@
-name: Build web
+name: Build python
 
 on:
   workflow_call:
