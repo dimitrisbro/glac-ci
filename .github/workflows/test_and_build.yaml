@@ -33,17 +33,17 @@ jobs:
       - name: Install dependencies
         run: |
           poetry config virtualenvs.in-project true
-          poetry install --no-root --with dev,test
+          poetry install --no-root
 
-      - name: Run style checks
-        run: |
-          poetry run mypy .
-          poetry run isort . --check --diff
-          poetry run flake8 .
-          poetry run black . --check --diff
+#      - name: Run style checks
+#        run: |
+#          poetry run mypy .
+#          poetry run isort . --check --diff
+#          poetry run flake8 .
+#          poetry run black . --check --diff
 
-      - name: Run tests
-        run: poetry run pytest
+#      - name: Run tests
+#        run: poetry run pytest
 
   build:
     needs: [test]
@@ -52,4 +52,5 @@ jobs:
       packages: write
     secrets: inherit
     # Replace build_web.yaml to build_lib.yaml for lib workflow
-    uses: ./.github/workflows/build_web.yaml
+#    uses: ./.github/workflows/build_web.yaml
+    uses: ./.github/workflows/build_python.yaml

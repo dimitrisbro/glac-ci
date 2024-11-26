@@ -67,20 +67,20 @@ jobs:
       - name: Install dependencies
         run: |
           poetry config virtualenvs.in-project true
-          poetry install --no-root --with dev
+          poetry install --no-root
 
-      - name: Generate openapi.yaml
-        run: poetry run python ./tools/extract_openapi.py app.main:app --app-dir . --out ./openapi.yaml --app_version "${{ env.APP_VERSION }}"
+#      - name: Generate openapi.yaml
+#        run: poetry run python ./tools/extract_openapi.py app.main:app --app-dir . --out ./openapi.yaml --app_version "${{ env.APP_VERSION }}"
 
       - name: Configure Git
         run: |
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
-      - name: Create a github release
-        run: gh release create "${{ env.APP_VERSION }}" ./openapi.yaml
-        env:
-          GH_TOKEN: ${{ github.token }}
+#      - name: Create a github release
+#        run: gh release create "${{ env.APP_VERSION }}" ./openapi.yaml
+#        env:
+#          GH_TOKEN: ${{ github.token }}
 
       - name: Publish Helm charts
         uses: stefanprodan/helm-gh-pages@master
