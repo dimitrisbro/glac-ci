@@ -3,12 +3,12 @@ entries:
   ipto-cron-helm:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-11-26T14:42:51.229699615Z"
+    created: "2024-11-27T11:40:08.43146418Z"
     description: A Helm chart for Kubernetes
-    digest: a3e09ad988656bbe6edd3b4e163d7ee23fe852d4650bae479d7808aaab72b908
+    digest: 755f48f39178753073de9a721b652f7bc3fc9236c8fe704f1df62165f0de2f3a
     name: ipto-cron-helm
     type: application
     urls:
-    - ipto-cron-helm-0.1.0.tgz
+    - https://dimitrisbro.github.io/glac-ci/helm-charts/ipto-cron-helm-0.1.0.tgz
     version: 0.1.0
-generated: "2024-11-26T14:42:51.229494252Z"
+generated: "2024-11-27T11:40:08.431161415Z"
